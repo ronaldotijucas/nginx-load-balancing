@@ -1,12 +1,19 @@
 version: '2'
 services:
-  api:
+  api1:
     build: ./api
     command: yarn start
     volumes:
       - ./api:/home/node
     environment:
       - PORT=8000
+  api2:
+    build: ./api
+    command: yarn start
+    volumes:
+      - ./api:/home/node
+    environment:
+      - PORT=9000
   nginx:
     image: nginx
     working_dir: /etc/nginx
